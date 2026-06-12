@@ -55,36 +55,12 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-slate-200" id="tableBody">
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-800">PC Guru - Bilik Guru 1</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">Elektronik / PC</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">Bilik Guru</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                <button onclick="duplicateRecord('PC Guru - Bilik Guru 1', 'Elektronik / PC', 'Bilik Guru')" class="text-blue-600 hover:text-blue-900 bg-blue-50 px-3 py-1 rounded-md transition-colors">
-                                    <i class="fa-regular fa-copy mr-1"></i> Duplicate
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
+                        </tbody>
                 </table>
             </div>
         </div>
     </main>
 
-    <script>
-        // Logika untuk fetch data dari GAS dan populate table akan diletakkan di sini.
-        // Logika untuk Duplicate:
-        function duplicateRecord(nama, kategori, lokasi) {
-            // Isi form modal dengan data yang disalin
-            alert(`Sedia untuk duplicate: ${nama}. Borang akan dibuka dengan pra-isi (pre-filled).`);
-            // openModal(); -> letakkan nilai dalam input field
-        }
-
-        function openModal() {
-            // Kod untuk buka pop-up form
-            console.log("Buka form pendaftaran");
-        }
-    </script>
     <div id="asetModal" class="fixed inset-0 bg-slate-900 bg-opacity-50 hidden flex items-center justify-center backdrop-blur-sm z-50">
         <div class="bg-white rounded-xl shadow-xl w-11/12 md:w-1/2 max-w-lg p-6">
             <div class="flex justify-between items-center mb-4">
@@ -131,7 +107,6 @@
     </div>
 
     <script>
-        // MASUKKAN URL WEB APP ANDA DI SINI
         const scriptURL = 'https://script.google.com/macros/s/AKfycbzJ_hJvfC-r2ZsV9iwVrQgGeq2cI6EPtTLjmNeCtcyR21S207jhvJE_LN9PY8fzQo4/exec'; 
         
         const modal = document.getElementById('asetModal');
@@ -195,7 +170,7 @@
                 });
             } catch (error) {
                 console.error('Ralat:', error);
-                tableBody.innerHTML = '<tr><td colspan="4" class="px-6 py-4 text-center text-sm text-red-500">Gagal memuat turun data. Semak konsol.</td></tr>';
+                tableBody.innerHTML = '<tr><td colspan="4" class="px-6 py-4 text-center text-sm text-red-500">Gagal memuat turun data. Sila semak konsol atau URL.</td></tr>';
             }
         }
 
